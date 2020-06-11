@@ -9,7 +9,7 @@
   "scripts" : { "test" : "wtest .run proto", "docgen" : "wdocgen .build proto" },
   "repository" : { "type" : "git", "url" : "https://github.com/Wandalen/wTest.git" },
   "bugs" : { "url" : "https://github.com/Wandalen/wTest/issues" },
-  "dependencies" : { "wTools" : "" },
-  "devDependencies" : { "wTesting" : "", "eslint" : "7.1.0", "wtest" : "file:." },
+  "dependencies" : { "wTools" : "alpha" },
+  "devDependencies" : { "eslint" : "7.1.0", "wtest" : "file:.", "wTesting" : "alpha" },
   "keywords" : [ "wTools" ]
 }
