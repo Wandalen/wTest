@@ -3,16 +3,18 @@
 about :
 
   name : 'wTest'
-  description : '___'
-  version : '0.4.0'
+  description : 'Framework for convenient unit testing. Aggregates module Testing. Utility Test provides the intuitive interface, simple tests structure, asynchronous code handling mechanism, colorful report, verbosity control and more. Use the module to get free of routines which can be automated.'
+  version : '0.3.0'
   enabled : 1
   interpreters :
   - njs >= 8.0.0
   - chrome >= 60.0.0
   - firefox >= 60.0.0
   keywords :
-  - tools
-  - wTools
+  - 'testing'
+  - 'unit test'
+  - 'functional test'
+  - 'wTools'
   license : MIT
   author : 'Kostiantyn Wandalen <wanalen@01.school>'
   contributors :
@@ -27,7 +29,7 @@ path :
   repository : git+https:///github.com/Wandalen/wTest.git
   origins :
    - git+https:///github.com/Wandalen/wTest.git
-   - npm:///wTest
+   - npm:///wtest
   bugtracker : https:///github.com/Wandalen/wTest/issues
 
 step :
