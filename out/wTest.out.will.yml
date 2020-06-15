@@ -3,8 +3,8 @@ root:
   - wTest.out
 consistency:
   ../.ex.will.yml: &ref_0
-    hash: ef8e8ae0da236883666969ce61b67990
-    size: 1642
+    hash: 728c9a83a91b24f958663eba4e57d7db
+    size: 1643
   ../.im.will.yml: &ref_1
     hash: 4bd2ad8e081461ac0a9600e6aa2abea9
     size: 4662
@@ -17,7 +17,7 @@ module:
       enabled: 1
       version: 0.4.0
       interpreters: &ref_2
-        - njs >= 8.0.0
+        - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
       keywords: &ref_3
@@ -1423,8 +1423,8 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: ef8e8ae0da236883666969ce61b67990
-        size: 1642
+        hash: 728c9a83a91b24f958663eba4e57d7db
+        size: 1643
       ../.im.will.yml:
         hash: 4bd2ad8e081461ac0a9600e6aa2abea9
         size: 4662
