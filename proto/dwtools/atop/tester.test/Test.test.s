@@ -13,7 +13,7 @@ if( typeof module !== 'undefined' )
 
 var _global = _global_;
 var _ = _global_.wTools;
-var tester = require( '../../atop/test/Test.s' );
+var tester = require( '../../atop/tester/entry/Test.s' );
 
 // --
 // tests
