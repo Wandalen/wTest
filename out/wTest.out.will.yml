@@ -2,36 +2,39 @@ format: outwillfile-2.0
 root:
   - wTest.out
 consistency:
-  wTest.out.will.yml: &ref_0
-    hash: 2b5f70bbc6244ea468c6d55044c4e8e1
-    size: 36706
-  ../.ex.will.yml: &ref_1
-    hash: 728c9a83a91b24f958663eba4e57d7db
-    size: 1643
-  ../.im.will.yml: &ref_2
-    hash: 4bd2ad8e081461ac0a9600e6aa2abea9
-    size: 4662
+  ../.ex.will.yml: &ref_0
+    hash: 1e43ce571547e50442e9bf973ec375f1
+    size: 1966
+  ../.im.will.yml: &ref_1
+    hash: 7f8a3922499305492a9069b9c8bb0164
+    size: 4866
 module:
   wTest.out:
     about:
       name: wTest
       org: noorg
-      description: ___
+      description: >-
+        Framework for convenient unit testing. Aggregates module Testing.
+        Utility Test provides the intuitive interface, simple tests structure,
+        asynchronous code handling mechanism, colorful report, verbosity control
+        and more. Use the module to get free of routines which can be automated.
       enabled: 1
-      version: 0.4.0
-      interpreters:
+      version: 0.3.0
+      interpreters: &ref_2
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
-        - tools
+      keywords: &ref_3
+        - testing
+        - unit test
+        - functional test
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wtest
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -67,7 +70,7 @@ module:
       origins:
         path:
           - 'git+https:///github.com/Wandalen/wTest.git'
-          - 'npm:///wTest'
+          - 'npm:///wtest'
       bugtracker:
         path: 'https:///github.com/Wandalen/wTest/issues'
       in:
@@ -109,7 +112,7 @@ module:
       entry.proto.no.tests:
         criterion:
           tests: no.tests
-        path: ../proto/dwtools/___
+        path: ../proto/dwtools/atop/tester/entry/Test.s
       entry.proto.only.tests:
         criterion:
           tests: only.tests
@@ -119,13 +122,13 @@ module:
           debug: debug
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/___'
+        path: '{path::out.*=1}/source/dwtools/atop/tester/entry/Test.s'
       entry.out.raw.debug.release:
         criterion:
           debug: release
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/___'
+        path: '{path::out.*=1}/source/dwtools/atop/tester/entry/Test.s'
       entry.out.compiled.debug.debug:
         criterion:
           debug: debug
@@ -157,9 +160,20 @@ module:
           - ../proto/dwtools/abase
           - ../proto/dwtools/amid
           - ../proto/dwtools/atop
+          - ../proto/dwtools/atop/tester
+          - ../proto/dwtools/atop/tester/entry
+          - ../proto/dwtools/atop/tester/entry/Test.s
+          - ../proto/dwtools/atop/tester/include
+          - ../proto/dwtools/atop/tester/include/Test.s
+          - ../proto/dwtools/atop/tester.test
+          - ../proto/dwtools/atop/tester.test/Test.test.s
     submodule:
       wTools:
         path: 'npm:///wTools'
+        autoExporting: 0
+        enabled: 0
+      wTesting:
+        path: 'npm:///wTesting'
         autoExporting: 0
         enabled: 0
       eslint:
@@ -168,6 +182,12 @@ module:
         enabled: 0
         criterion:
           debug: 1
+      wTest:
+        path: 'hd://..'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
     reflector:
       reflect.proto.debug.raw:
         src:
@@ -581,7 +601,7 @@ module:
           debug: release
       reflect.proto.debug.raw:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.debug.raw'
         criterion:
           tests: no.tests
           debug: debug
@@ -591,7 +611,7 @@ module:
           - files.reflect
       reflect.proto.release.raw:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.release.raw'
         criterion:
           tests: no.tests
           debug: release
@@ -601,7 +621,7 @@ module:
           - files.reflect
       reflect.proto.debug.compiled:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.debug.compiled'
         criterion:
           tests: no.tests
           debug: debug
@@ -611,7 +631,7 @@ module:
           - files.reflect
       reflect.proto.release.compiled:
         opts:
-          filePath: 'reflector::reflect.proto*'
+          filePath: 'reflector::reflect.proto.release.compiled'
         criterion:
           tests: no.tests
           debug: release
@@ -622,7 +642,7 @@ module:
       transpile.proto.raw:
         opts:
           entry: 'path::entry.proto.no.tests'
-          filePath: 'reflector::transpile.proto.raw*'
+          filePath: 'reflector::transpile.proto.raw'
         criterion:
           raw: raw
           debug: release
@@ -632,7 +652,7 @@ module:
       transpile.proto.no.tests.compiled.debug:
         opts:
           entry: 'path::entry.proto.*=1'
-          filePath: 'reflector::transpile.proto.no.tests.compiled*'
+          filePath: 'reflector::transpile.proto.no.tests.compiled.debug'
         criterion:
           tests: no.tests
           raw: compiled
@@ -643,7 +663,7 @@ module:
       transpile.proto.no.tests.compiled.release:
         opts:
           entry: 'path::entry.proto.*=1'
-          filePath: 'reflector::transpile.proto.no.tests.compiled*'
+          filePath: 'reflector::transpile.proto.no.tests.compiled.release'
         criterion:
           tests: no.tests
           raw: compiled
@@ -655,7 +675,7 @@ module:
         opts:
           entry: 'path::entry.proto.*=1'
           external.before: '{path::out.*=1}/Main.s'
-          filePath: 'reflector::transpile.proto.only.tests.compiled*'
+          filePath: 'reflector::transpile.proto.only.tests.compiled.debug'
         criterion:
           tests: only.tests
           raw: compiled
@@ -667,7 +687,7 @@ module:
         opts:
           entry: 'path::entry.proto.*=1'
           external.before: '{path::out.*=1}/Main.s'
-          filePath: 'reflector::transpile.proto.only.tests.compiled*'
+          filePath: 'reflector::transpile.proto.only.tests.compiled.release'
         criterion:
           tests: only.tests
           raw: compiled
@@ -675,24 +695,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -769,7 +771,7 @@ module:
           - 'build::npm'
     exported:
       proto.export:
-        version: 0.4.0
+        version: 0.3.0
         recursive: 0
         withIntegrated: 2
         tar: 0
@@ -781,31 +783,26 @@ module:
           content: proto
           export: 1
     consistency:
-      wTest.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wTest
       org: noorg
-      description: ___
+      description: >-
+        Framework for convenient unit testing. Aggregates module Testing.
+        Utility Test provides the intuitive interface, simple tests structure,
+        asynchronous code handling mechanism, colorful report, verbosity control
+        and more. Use the module to get free of routines which can be automated.
       enabled: 1
-      version: 0.4.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - tools
-        - wTools
+      version: 0.3.0
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_4
       npm.name: wtest
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -839,7 +836,7 @@ module:
       origins:
         path:
           - 'git+https:///github.com/Wandalen/wTest.git'
-          - 'npm:///wTest'
+          - 'npm:///wtest'
       bugtracker:
         path: 'https:///github.com/Wandalen/wTest/issues'
       in:
@@ -881,7 +878,7 @@ module:
       entry.proto.no.tests:
         criterion:
           tests: no.tests
-        path: proto/dwtools/___
+        path: proto/dwtools/atop/tester/entry/Test.s
       entry.proto.only.tests:
         criterion:
           tests: only.tests
@@ -891,13 +888,13 @@ module:
           debug: debug
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/___'
+        path: '{path::out.*=1}/source/dwtools/atop/tester/entry/Test.s'
       entry.out.raw.debug.release:
         criterion:
           debug: release
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/___'
+        path: '{path::out.*=1}/source/dwtools/atop/tester/entry/Test.s'
       entry.out.compiled.debug.debug:
         criterion:
           debug: debug
@@ -915,12 +912,22 @@ module:
         path: 'npm:///wTools'
         autoExporting: 0
         enabled: 0
+      wTesting:
+        path: 'npm:///wTesting'
+        autoExporting: 0
+        enabled: 0
       eslint:
         path: 'npm:///eslint#7.1.0'
         autoExporting: 0
         enabled: 0
         criterion:
           debug: 1
+      wTest:
+        path: 'hd://.'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
     reflector:
       reflect.proto.debug.raw:
         src:
@@ -1453,9 +1460,8 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: 728c9a83a91b24f958663eba4e57d7db
-        size: 1643
+        hash: 1e43ce571547e50442e9bf973ec375f1
+        size: 1966
       ../.im.will.yml:
-        hash: 4bd2ad8e081461ac0a9600e6aa2abea9
-        size: 4662
-      wTest.out.will.yml: *ref_0
+        hash: 7f8a3922499305492a9069b9c8bb0164
+        size: 4866
