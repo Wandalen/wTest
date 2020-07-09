@@ -4,11 +4,11 @@
   "description" : "Framework for convenient unit testing. Aggregates module Testing. Utility Test provides the intuitive interface, simple tests structure, asynchronous code handling mechanism, colorful report, verbosity control and more. Use the module to get free of routines which can be automated.",
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
   "license" : "MIT",
-  "main" : "proto/dwtools/atop/tester/entry/Test.s",
+  "main" : "proto/wtools/atop/tester/entry/Test.s",
   "files" :
   [
-    "proto/dwtools/atop/atop/tester/entry/Test.s",
-    "proto/dwtools/Tools.s"
+    "proto/wtools/atop/atop/tester/entry/Test.s",
+    "proto/wtools/Tools.s"
   ],
   "scripts" : { "test" : "wtest .run proto", "docgen" : "wdocgen .build proto" },
   "repository" : { "type" : "git", "url" : "https://github.com/Wandalen/wTest.git" },
