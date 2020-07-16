@@ -1,7 +1,7 @@
 if( typeof module !== 'undefined' )
 require( 'wtest' );
 
-var _ = _global_.wTools;
+let _ = _global_.wTools;
 
 //
 
@@ -69,7 +69,7 @@ function arrayIs( test )
 
 //
 
-var Self =
+let Self =
 {
 
   name : 'Sample/Trivial',
