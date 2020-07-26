@@ -10,7 +10,7 @@
     "proto/wtools/atop/atop/tester/entry/Test.s",
     "proto/wtools/Tools.s"
   ],
-  "scripts" : { "test" : "wtest .run proto", "docgen" : "wdocgen .build proto" },
+  "scripts" : { "test" : "wtest .run proto rapidity:-3", "docgen" : "wdocgen .build proto" },
   "repository" : { "type" : "git", "url" : "https://github.com/Wandalen/wTest.git" },
   "bugs" : { "url" : "https://github.com/Wandalen/wTest/issues" },
   "dependencies" : { "wTools" : "alpha", "wTesting" : "alpha" },
