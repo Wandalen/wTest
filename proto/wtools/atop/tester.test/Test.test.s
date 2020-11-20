@@ -13,7 +13,7 @@ if( typeof module !== 'undefined' )
 
 let _global = _global_;
 let _ = _global_.wTools;
-var tester = require( '../../atop/tester/entry/Test.s' );
+var tester = require( '../../atop/testing/entry/Test.s' );
 
 // --
 // tests
@@ -22,10 +22,10 @@ var tester = require( '../../atop/tester/entry/Test.s' );
 function routinesOfTesting( test )
 {
   test.case = 'routines tester.*';
-  test.is( _.routineIs( tester.all ) );
-  test.is( _.routineIs( tester.any ) );
-  test.is( _.routineIs( tester.none ) );
-  test.is( _.routineIs( tester.arrayIs ) );
+  test.true( _.routineIs( tester.all ) );
+  test.true( _.routineIs( tester.any ) );
+  test.true( _.routineIs( tester.none ) );
+  test.true( _.routineIs( tester.arrayIs ) );
 }
 
 // --
