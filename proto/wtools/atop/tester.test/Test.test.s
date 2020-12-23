@@ -1,4 +1,5 @@
-( function _Test_test_s_() {
+( function _Test_test_s_()
+{
 
 'use strict';
 
@@ -13,7 +14,8 @@ if( typeof module !== 'undefined' )
 
 let _global = _global_;
 let _ = _global_.wTools;
-var tester = require( '../../atop/testing/entry/Test.s' );
+// var tester = require( '../../atop/testing/entry/Test.s' );
+var tester = require( '../tester/entry/Test.s' );
 
 // --
 // tests
