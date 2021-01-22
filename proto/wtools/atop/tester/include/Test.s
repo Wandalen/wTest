@@ -1,4 +1,4 @@
-( function _Test_s_( )
+( function _Test_s_()
 {
 
 'use strict';
