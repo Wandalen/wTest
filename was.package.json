@@ -8,6 +8,7 @@
   "files" :
   [
     "proto/wtools/atop/atop/tester/entry/Test.s",
+    "proto/wtools/atop/atop/tester/include/Test.s",
     "proto/wtools/Tools.s"
   ],
   "scripts" : { "test" : "wtest .run proto rapidity:-3", "docgen" : "wdocgen .build proto" },
