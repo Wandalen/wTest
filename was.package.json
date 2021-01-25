@@ -6,8 +6,8 @@
   "license": "MIT",
   "main": "proto/wtools/atop/tester/entry/Test.s",
   "files": [
-    "proto/wtools/atop/atop/tester/entry/Test.s",
-    "proto/wtools/atop/atop/tester/include/Test.s",
+    "proto/wtools/atop/tester/entry/Test.s",
+    "proto/wtools/atop/tester/include/Test.s",
     "proto/wtools/Tools.s"
   ],
   "scripts": {
