@@ -6,14 +6,14 @@
 if( typeof module !== 'undefined' )
 {
 
-  let _ = require( '../../Tools.s' );
+  const _ = require( '../../Tools.s' );
 
   _.include( 'wTesting' );
 
 }
 
-let _global = _global_;
-let _ = _global_.wTools;
+const _global = _global_;
+const _ = _global_.wTools;
 // var tester = require( '../../atop/testing/entry/Test.s' );
 var tester = require( '../tester/entry/Test.s' );
 
@@ -34,7 +34,7 @@ function routinesOfTesting( test )
 // declare
 // --
 
-let Self =
+const Proto =
 {
 
   name : 'Tools.top.test',
@@ -49,7 +49,7 @@ let Self =
 
 }
 
-Self = wTestSuite( Self );
+const Self = wTestSuite( Proto );
 if( typeof module !== 'undefined' && !module.parent )
 wTester.test( Self.name );
 
