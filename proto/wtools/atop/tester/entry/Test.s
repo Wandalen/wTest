@@ -10,7 +10,7 @@
 
 if( typeof module !== 'undefined' )
 {
-  let _ = require( '../include/Test.s' )
+  const _ = require( '../include/Test.s' )
   module[ 'exports' ] = _global_.wTools;
 }
 
