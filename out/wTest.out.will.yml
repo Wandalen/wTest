@@ -2,13 +2,10 @@ format: outwillfile-2.0
 root:
   - wTest.out
 consistency:
-  wTest.out.will.yml: &ref_0
-    hash: a6c966046a161452cc1069ce3576b64e
-    size: 38782
-  ../.ex.will.yml: &ref_1
+  ../.ex.will.yml: &ref_0
     hash: 1e43ce571547e50442e9bf973ec375f1
     size: 1966
-  ../.im.will.yml: &ref_2
+  ../.im.will.yml: &ref_1
     hash: fbd00f3ec77f2d46e19d16f43c6ce308
     size: 4867
 module:
@@ -23,21 +20,21 @@ module:
         and more. Use the module to get free of routines which can be automated.
       enabled: 1
       version: 0.3.0
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - testing
         - unit test
         - functional test
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wtest
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -705,24 +702,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -811,9 +790,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wTest.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wTest
@@ -825,23 +803,13 @@ module:
         and more. Use the module to get free of routines which can be automated.
       enabled: 1
       version: 0.3.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - testing
-        - unit test
-        - functional test
-        - wTools
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_4
       npm.name: wtest
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -1509,4 +1477,3 @@ module:
       ../.im.will.yml:
         hash: fbd00f3ec77f2d46e19d16f43c6ce308
         size: 4867
-      wTest.out.will.yml: *ref_0
