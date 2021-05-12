@@ -3,19 +3,22 @@
 
 Framework for convenient unit testing. Aggregates module Testing. Utility Test provides the intuitive interface, simple tests structure, asynchronous code handling mechanism, colorful report, verbosity control and more. Use the module to get free of routines which can be automated.
 
-## Try out from the repository
+### Try out from the repository
+
 ```
 git clone https://github.com/Wandalen/wTest
 cd wTest
-npm install
+will .npm.install
 node sample/trivial/Sample.s
 ```
 
+Make sure you have utility `willbe` installed. To install willbe: `npm i -g willbe@stable`. Willbe is required to build of the module.
+
 ### To add to your project
+
 ```
-npm add 'wtest@alpha'
+npm add 'wtest@stable'
 ```
 
-
-
+`Willbe` is not required to use the module in your project as submodule.
 
