@@ -1,7 +1,7 @@
 if( typeof module !== 'undefined' )
 require( 'wtest' );
 
-let _ = _global_.wTools;
+let _ = wTools;
 
 //
 
