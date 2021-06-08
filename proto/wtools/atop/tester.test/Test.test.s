@@ -5,17 +5,13 @@
 
 if( typeof module !== 'undefined' )
 {
-
-  const _ = require( 'Tools' );
-
+  const _ = require( '../../../node_modules/Tools' );
   _.include( 'wTesting' );
-
 }
 
 const _global = _global_;
 const _ = _global_.wTools;
-// var tester = require( '../../atop/testing/entry/Test.s' );
-var tester = require( '../tester/entry/Test.s' );
+var tester = require( '../../../node_modules/wtest' );
 
 // --
 // tests
