@@ -28,7 +28,7 @@
     "wTesting": "gamma"
   },
   "devDependencies": {
-    "eslint": "7.1.0"
+    "eslint": "7.32.0"
   },
   "keywords": [
     "testing",
